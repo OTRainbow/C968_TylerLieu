@@ -78,6 +78,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddPartScreen.resx">
+      <DependentUpon>AddPartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProductScreen.resx">
+      <DependentUpon>AddProductScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPartScreen.resx">
+      <DependentUpon>ModifyPartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyProductScreen.resx">
+      <DependentUpon>ModifyProductScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
