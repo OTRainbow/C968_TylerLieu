@@ -44,67 +44,71 @@ namespace C968_TylerLieu
             this.txtbx_inventory = new System.Windows.Forms.TextBox();
             this.txtbx_name = new System.Windows.Forms.TextBox();
             this.txtbx_id = new System.Windows.Forms.TextBox();
-            this.dGV_parts_all = new System.Windows.Forms.DataGridView();
-            this.dGV_parts_associated = new System.Windows.Forms.DataGridView();
             this.lbl_dGVtop = new System.Windows.Forms.Label();
             this.lbl_dGVbottom = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.txtbx_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.dGV_parts_all = new System.Windows.Forms.DataGridView();
+            this.dGV_parts_associated = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_parts_all)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_parts_associated)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(632, 415);
+            this.btn_save.Enabled = false;
+            this.btn_save.Location = new System.Drawing.Point(89, 317);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 39;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(713, 415);
+            this.btn_cancel.Location = new System.Drawing.Point(170, 317);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 38;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(66, 13);
+            this.lbl_title.Size = new System.Drawing.Size(97, 20);
             this.lbl_title.TabIndex = 40;
             this.lbl_title.Text = "Add Product";
             // 
             // lbl_min
             // 
             this.lbl_min.AutoSize = true;
-            this.lbl_min.Location = new System.Drawing.Point(174, 239);
+            this.lbl_min.Location = new System.Drawing.Point(59, 222);
             this.lbl_min.Name = "lbl_min";
             this.lbl_min.Size = new System.Drawing.Size(24, 13);
-            this.lbl_min.TabIndex = 52;
+            this.lbl_min.TabIndex = 51;
             this.lbl_min.Text = "Min";
             // 
             // lbl_max
             // 
             this.lbl_max.AutoSize = true;
-            this.lbl_max.Location = new System.Drawing.Point(74, 239);
+            this.lbl_max.Location = new System.Drawing.Point(153, 222);
             this.lbl_max.Name = "lbl_max";
             this.lbl_max.Size = new System.Drawing.Size(27, 13);
-            this.lbl_max.TabIndex = 51;
+            this.lbl_max.TabIndex = 52;
             this.lbl_max.Text = "Max";
             // 
             // lbl_cost
             // 
             this.lbl_cost.AutoSize = true;
-            this.lbl_cost.Location = new System.Drawing.Point(38, 213);
+            this.lbl_cost.Location = new System.Drawing.Point(20, 196);
             this.lbl_cost.Name = "lbl_cost";
             this.lbl_cost.Size = new System.Drawing.Size(63, 13);
             this.lbl_cost.TabIndex = 50;
@@ -113,7 +117,7 @@ namespace C968_TylerLieu
             // lbl_inventory
             // 
             this.lbl_inventory.AutoSize = true;
-            this.lbl_inventory.Location = new System.Drawing.Point(50, 187);
+            this.lbl_inventory.Location = new System.Drawing.Point(32, 170);
             this.lbl_inventory.Name = "lbl_inventory";
             this.lbl_inventory.Size = new System.Drawing.Size(51, 13);
             this.lbl_inventory.TabIndex = 49;
@@ -122,7 +126,7 @@ namespace C968_TylerLieu
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(66, 161);
+            this.lbl_name.Location = new System.Drawing.Point(48, 144);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
             this.lbl_name.TabIndex = 48;
@@ -131,7 +135,7 @@ namespace C968_TylerLieu
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(83, 135);
+            this.lbl_id.Location = new System.Drawing.Point(65, 118);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(18, 13);
             this.lbl_id.TabIndex = 47;
@@ -139,67 +143,57 @@ namespace C968_TylerLieu
             // 
             // txtbx_min
             // 
-            this.txtbx_min.Location = new System.Drawing.Point(204, 236);
+            this.txtbx_min.Location = new System.Drawing.Point(89, 219);
             this.txtbx_min.Name = "txtbx_min";
             this.txtbx_min.Size = new System.Drawing.Size(60, 20);
-            this.txtbx_min.TabIndex = 46;
+            this.txtbx_min.TabIndex = 45;
+            this.txtbx_min.TextChanged += new System.EventHandler(this.txtbx_min_TextChanged);
             // 
             // txtbx_max
             // 
-            this.txtbx_max.Location = new System.Drawing.Point(107, 236);
+            this.txtbx_max.Location = new System.Drawing.Point(186, 219);
             this.txtbx_max.Name = "txtbx_max";
             this.txtbx_max.Size = new System.Drawing.Size(60, 20);
-            this.txtbx_max.TabIndex = 45;
+            this.txtbx_max.TabIndex = 46;
+            this.txtbx_max.TextChanged += new System.EventHandler(this.txtbx_max_TextChanged);
             // 
             // txtbx_cost
             // 
-            this.txtbx_cost.Location = new System.Drawing.Point(107, 210);
+            this.txtbx_cost.Location = new System.Drawing.Point(89, 193);
             this.txtbx_cost.Name = "txtbx_cost";
             this.txtbx_cost.Size = new System.Drawing.Size(100, 20);
             this.txtbx_cost.TabIndex = 44;
+            this.txtbx_cost.TextChanged += new System.EventHandler(this.txtbx_cost_TextChanged);
             // 
             // txtbx_inventory
             // 
-            this.txtbx_inventory.Location = new System.Drawing.Point(107, 184);
+            this.txtbx_inventory.Location = new System.Drawing.Point(89, 167);
             this.txtbx_inventory.Name = "txtbx_inventory";
             this.txtbx_inventory.Size = new System.Drawing.Size(100, 20);
             this.txtbx_inventory.TabIndex = 43;
+            this.txtbx_inventory.TextChanged += new System.EventHandler(this.txtbx_inventory_TextChanged);
             // 
             // txtbx_name
             // 
-            this.txtbx_name.Location = new System.Drawing.Point(107, 158);
+            this.txtbx_name.Location = new System.Drawing.Point(89, 141);
             this.txtbx_name.Name = "txtbx_name";
             this.txtbx_name.Size = new System.Drawing.Size(100, 20);
             this.txtbx_name.TabIndex = 42;
+            this.txtbx_name.TextChanged += new System.EventHandler(this.txtbx_name_TextChanged);
             // 
             // txtbx_id
             // 
-            this.txtbx_id.Location = new System.Drawing.Point(107, 132);
+            this.txtbx_id.Enabled = false;
+            this.txtbx_id.Location = new System.Drawing.Point(89, 115);
             this.txtbx_id.Name = "txtbx_id";
             this.txtbx_id.ReadOnly = true;
             this.txtbx_id.Size = new System.Drawing.Size(100, 20);
             this.txtbx_id.TabIndex = 41;
             // 
-            // dGV_parts_all
-            // 
-            this.dGV_parts_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_parts_all.Location = new System.Drawing.Point(385, 72);
-            this.dGV_parts_all.Name = "dGV_parts_all";
-            this.dGV_parts_all.Size = new System.Drawing.Size(322, 128);
-            this.dGV_parts_all.TabIndex = 53;
-            // 
-            // dGV_parts_associated
-            // 
-            this.dGV_parts_associated.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_parts_associated.Location = new System.Drawing.Point(385, 247);
-            this.dGV_parts_associated.Name = "dGV_parts_associated";
-            this.dGV_parts_associated.Size = new System.Drawing.Size(322, 124);
-            this.dGV_parts_associated.TabIndex = 54;
-            // 
             // lbl_dGVtop
             // 
             this.lbl_dGVtop.AutoSize = true;
-            this.lbl_dGVtop.Location = new System.Drawing.Point(385, 53);
+            this.lbl_dGVtop.Location = new System.Drawing.Point(291, 20);
             this.lbl_dGVtop.Name = "lbl_dGVtop";
             this.lbl_dGVtop.Size = new System.Drawing.Size(96, 13);
             this.lbl_dGVtop.TabIndex = 55;
@@ -208,7 +202,7 @@ namespace C968_TylerLieu
             // lbl_dGVbottom
             // 
             this.lbl_dGVbottom.AutoSize = true;
-            this.lbl_dGVbottom.Location = new System.Drawing.Point(382, 231);
+            this.lbl_dGVbottom.Location = new System.Drawing.Point(287, 200);
             this.lbl_dGVbottom.Name = "lbl_dGVbottom";
             this.lbl_dGVbottom.Size = new System.Drawing.Size(167, 13);
             this.lbl_dGVbottom.TabIndex = 56;
@@ -216,51 +210,93 @@ namespace C968_TylerLieu
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(632, 203);
+            this.btn_add.Location = new System.Drawing.Point(538, 170);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 57;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(632, 377);
+            this.btn_delete.Location = new System.Drawing.Point(537, 346);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 58;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // txtbx_search
             // 
-            this.txtbx_search.Location = new System.Drawing.Point(606, 45);
+            this.txtbx_search.Location = new System.Drawing.Point(512, 12);
             this.txtbx_search.Name = "txtbx_search";
             this.txtbx_search.Size = new System.Drawing.Size(100, 20);
             this.txtbx_search.TabIndex = 59;
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(525, 43);
+            this.btn_search.Location = new System.Drawing.Point(431, 10);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
             this.btn_search.TabIndex = 60;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // dGV_parts_all
+            // 
+            this.dGV_parts_all.AllowUserToAddRows = false;
+            this.dGV_parts_all.AllowUserToDeleteRows = false;
+            this.dGV_parts_all.AllowUserToOrderColumns = true;
+            this.dGV_parts_all.AllowUserToResizeRows = false;
+            this.dGV_parts_all.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGV_parts_all.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dGV_parts_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_parts_all.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dGV_parts_all.Location = new System.Drawing.Point(291, 43);
+            this.dGV_parts_all.MultiSelect = false;
+            this.dGV_parts_all.Name = "dGV_parts_all";
+            this.dGV_parts_all.RowHeadersVisible = false;
+            this.dGV_parts_all.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_parts_all.Size = new System.Drawing.Size(322, 124);
+            this.dGV_parts_all.TabIndex = 61;
+            this.dGV_parts_all.SelectionChanged += new System.EventHandler(this.dGV_parts_all_SelectionChanged);
+            // 
+            // dGV_parts_associated
+            // 
+            this.dGV_parts_associated.AllowUserToAddRows = false;
+            this.dGV_parts_associated.AllowUserToDeleteRows = false;
+            this.dGV_parts_associated.AllowUserToOrderColumns = true;
+            this.dGV_parts_associated.AllowUserToResizeRows = false;
+            this.dGV_parts_associated.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGV_parts_associated.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dGV_parts_associated.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_parts_associated.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dGV_parts_associated.Location = new System.Drawing.Point(290, 216);
+            this.dGV_parts_associated.MultiSelect = false;
+            this.dGV_parts_associated.Name = "dGV_parts_associated";
+            this.dGV_parts_associated.RowHeadersVisible = false;
+            this.dGV_parts_associated.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_parts_associated.Size = new System.Drawing.Size(322, 124);
+            this.dGV_parts_associated.TabIndex = 62;
+            this.dGV_parts_associated.SelectionChanged += new System.EventHandler(this.dGV_parts_associated_SelectionChanged);
             // 
             // AddProductScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.SlateGray;
+            this.ClientSize = new System.Drawing.Size(624, 381);
+            this.Controls.Add(this.dGV_parts_associated);
+            this.Controls.Add(this.dGV_parts_all);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txtbx_search);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_dGVbottom);
             this.Controls.Add(this.lbl_dGVtop);
-            this.Controls.Add(this.dGV_parts_associated);
-            this.Controls.Add(this.dGV_parts_all);
             this.Controls.Add(this.lbl_min);
             this.Controls.Add(this.lbl_max);
             this.Controls.Add(this.lbl_cost);
@@ -277,6 +313,8 @@ namespace C968_TylerLieu
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
             this.Name = "AddProductScreen";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProductScreen";
             ((System.ComponentModel.ISupportInitialize)(this.dGV_parts_all)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_parts_associated)).EndInit();
@@ -302,13 +340,13 @@ namespace C968_TylerLieu
         private System.Windows.Forms.TextBox txtbx_inventory;
         private System.Windows.Forms.TextBox txtbx_name;
         private System.Windows.Forms.TextBox txtbx_id;
-        private System.Windows.Forms.DataGridView dGV_parts_all;
-        private System.Windows.Forms.DataGridView dGV_parts_associated;
         private System.Windows.Forms.Label lbl_dGVtop;
         private System.Windows.Forms.Label lbl_dGVbottom;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.TextBox txtbx_search;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.DataGridView dGV_parts_all;
+        private System.Windows.Forms.DataGridView dGV_parts_associated;
     }
 }

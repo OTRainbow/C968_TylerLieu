@@ -9,39 +9,53 @@ namespace C968_TylerLieu
 {
     class Inventory
     {
-        public BindingList<Product> Products { get; set; }
-        public BindingList<Part> AllParts { get; set; }
-        public void addProduct(Product product)
+        public static BindingList<Product> Products = new BindingList<Product>();
+        public static BindingList<Part> AllParts = new BindingList<Part>();
+        public static void addProduct(Product product)
         {
-
+            Products.Add(product);
         }
-        public bool removeProduct(int ProductID)
+        public static bool removeProduct(int ProductIndex)
         {
-            return true;
+            if (Products.Remove(Products[ProductIndex]))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public Product lookupProduct(int ProductID)
+        public static Product lookupProduct(int ProductIndex)
         {
-            return null;
+            return Products[ProductIndex];
         }
-        public void updateProduct(int ProductID, Product product)
+        public static void updateProduct(int ProductIndex, Product product)
         {
-
+            Products[ProductIndex] = product;
         }
-        public void addPart(Part part)
+        public static void addPart(Part part)
         {
-
+            AllParts.Add(part);
         }
-        public bool deletePart(Part part)
+        public static bool deletePart(Part part)
         {
-            return true;
+            if (AllParts.Remove(part))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public Part lookupPart(int PartID)
+        public static Part lookupPart(int PartIndex)
         {
-            return null;
+            return AllParts[PartIndex];
         }
-        public void updatePart(int PartID, Part part)
+        public static void updatePart(int PartIndex, Part part)
         {
-
+            AllParts[PartIndex] = part;
         }
     }
 }
